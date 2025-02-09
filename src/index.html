@@ -7,7 +7,36 @@
   <title>ระบบบันทึกค่าใช้จ่ายรายวัน</title>
 </head>
 <body class="bg-gray-100 p-6">
-  <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <h2 class="text-xl font-bold mb-4">บันทึกค่าใช้จ่าย</h2>
+  <div class="max-w-2xl w-full bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold text-center mb-4 text-gray-700">บันทึกค่าใช้จ่าย</h2>
+
+      <form id="expenseform" class="space-y-4">
+        <input type="text" id="title" placeholder="รายการ" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-400" required>
+        <input type="number" id="amount" placeholder="จำนวนเงิน" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-400" required>
+        <select id="category" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-400" required>
+          <option value="food">อาหาร</option>
+          <option value="transport">การเดินทาง</option>
+          <option value="transport">ช็อปปิ้ง</option>
+        </select>
+        <input type="date" id="date" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-orange-400" required>
+        <button type="submit" class="bg-orange-500 text-white px-4 py-3 rounded-lg w-full hover:bg-orange-600 transition">เพิ่มค่าใช้จ่าย</button>
+      </form>
+
+      <h2 class="text-2xl font-bold mt-6 text-center text-gray-700">รายการค่าใช้จ่าย</h2>
+      <div class="overflow-x-auto mt-3">
+        <table class="w-full mt-3 border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border p-2">รายการ</th>
+                    <th class="border p-2">จำนวน</th>
+                    <th class="border p-2">หมวดหมู่</th>
+                    <th class="border p-2">วันที่</th>
+                    <th class="border p-2">ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="expenseTable"></tbody>
+        </table>
+    </div>
+  </div>
 </body>
 </html>
